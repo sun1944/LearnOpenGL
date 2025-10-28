@@ -18,5 +18,5 @@ namespace Utils
 
     string readShaderSource(const char *filePath);
 
-    GLuint createShaderProgram();
+    GLuint createShaderProgram(string vertFilePath,string fragFilePath);
 }

@@ -66,7 +66,7 @@ namespace Utils
     }
 
 
-    GLuint createShaderProgram()
+    GLuint createShaderProgram(string vertFilePath,string fragFilePath)
     {
 
         GLint vertCompiled;
@@ -77,8 +77,8 @@ namespace Utils
         GLuint vShader = glCreateShader(GL_VERTEX_SHADER);
         GLuint  fShader = glCreateShader(GL_FRAGMENT_SHADER);
 
-        string vertShaderStr = readShaderSource("main/glsl/vertShader.glsl");
-        string fragShaderStr = readShaderSource("main/glsl/fragShader.glsl");
+        string vertShaderStr = readShaderSource(vertFilePath.c_str());
+        string fragShaderStr = readShaderSource(fragFilePath.c_str());
     
         const char* vertShaderSrc = vertShaderStr.c_str();
         const char* fragShaderSrc = fragShaderStr.c_str();
